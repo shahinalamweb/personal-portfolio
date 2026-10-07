@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "tailwindcss";
+
+/* Dark mood and Light mood */
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+/* Google Fonts */
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+  --font-londrina-outline: "Londrina Outline", sans-serif;
+}
+
+/* Custom color */
+@theme {
+    --color-darkBodyColor: #111827;
+    --color-textColor: #f9fafb;
+  --color-primary: #2563eb;
+  --color-primaryDark: #1B2CC1;
+  --color-blackDark: #1d3557;
+  --color-whiteDark: #e9ecef;
+  --color-blueLittle: #caf0f8;
+ 
+}
+
+/* CUSTOM CONTAINER */
+
+ @utility container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 12px;
+
+  /* Small devices (≥ 576px) */
+  @media (width >= 576px) {
+    max-width: 540px;
+  }
+
+  /* Medium devices (≥ 768px) */
+  @media (width >= 768px) {
+    max-width: 720px;
+  }
+
+  /* Large devices (≥ 992px) */
+  @media (width >= 992px) {
+    max-width: 960px;
+  }
+
+  /* Extra large devices (≥ 1200px) */
+  @media (width >= 1200px) {
+    max-width: 1140px;
+  }
+
+  /* Extra extra large devices (≥ 1400px) */
+  @media (width >= 1400px) {
+    max-width: 1320px;
+  }
+}
+
+@layer base {
+    html {
+        @apply scroll-smooth ;
+    }
+
+    body {
+        @apply dark:bg-darkBodyColor dark:text-textColor text-primary bg-blueLittle font-poppins tracking-wider overflow-x-hidden w-[100%] ;
+    }
+
+    /* hero design */
+    section{
+      @apply py-16 md:pt-28 md:pb-20;
+    }
+
+    input,
+    select,
+    textarea {
+      @apply w-full dark:bg-darkBodyColor border border-gray-800 px-4 py-3 rounded-lg;
+    }
+    input:focus,
+    input:active,
+    select:focus,
+    select:active,
+    textarea:focus,
+    textarea:active {
+      @apply outline-none border-primary ;
+    }
+    
+}  
+
+
+
+@layer components {
+  /* Header design */
+    .nav-link {
+        @apply relative font-bold text-white dark:text-white lg:text-primary;
+    }
+
+    .nav-link::before{
+        @apply content-[''] absolute w-full h-[2px] bg-gradient-to-r from-primary to-primaryDark -bottom-5 left-0 scale-x-0 transition-transform ease-in-out origin-right duration-500;
+    }
+    /* .active::before,for active link  */
+    .active::before,
+    .nav-link:hover:before{
+        @apply scale-x-100 origin-left;
+    }
+
+    .btn{
+        @apply relative overflow-hidden bg-gradient-to-r from-primaryDark to-primary text-white px-7 py-3 rounded-full capitalize font-bold flex justify-center items-center;
+    }
+    .btn::before{
+         @apply content-[''] absolute w-full w-[100%] h-[100%] bg-gradient-to-r from-primary to-primaryDark top-0 left-0 scale-x-0 transition-transform ease-in-out origin-right duration-300;
+    }
+    .btn:hover::before{
+        @apply scale-x-100 origin-left;
+    }
+
+    /* hero design */
+    .title,
+    .subtitle {
+      @apply text-4xl lg:text-6xl xl:text-[65px] font-bold bg-gradient-to-r from-primary to-primaryDark  dark:to-white inline-block text-transparent bg-clip-text pb-2;
+
+    }
+
+    .btn_outline{
+      @apply border border-primary text-primary py-4 px-9 rounded-full hover:bg-primary hover:text-white duration-300;
+    }
+
+    /* service section */
+    .subtitle {
+      @apply text-3xl md:text-4xl lg:text-5xl;
+    }
+}
+
+@layer utilities {
+  /* hero */
+  .social-icon{
+    @apply relative border border-primary text-primary h-10 w-10 rounded-full grid place-items-center cursor-pointer hover:text-white duration-300;
+
+  }
+
+  .social-icon::before{
+    @apply content-[''] absolute w-[100%] h-[100%] bg-primary inset-0 rounded-full scale-0 transition-none ease-in-out duration-300;
+  }
+  .social-icon:hover::before{
+    @apply scale-100 origin-center;
+  }
+  /* service section */
+  .service_item {
+    @apply flex flex-wrap items-center gap-3 px-4 py-8 border-b border-primary hover:bg-primary cursor-pointer duration-300;
+  }
+
+.service_item div p {
+  @apply duration-300;
+}
+.service_item:hover div p {
+  @apply text-white;
+}
+.service_item div i {
+  @apply duration-300;
+}
+.service_item:hover div i {
+  @apply text-white -rotate-90;
+}
+
+/* work section */
+.indicator {
+  transition: left 0.4s;
+}
+.work_card > div {
+  @apply duration-500;
+
+}
+.work_card:hover > div {
+  @apply bottom-0;
+}
+.work_card  div i {
+  @apply duration-300 delay-300;
+}
+.work_card:hover > div i {
+  @apply -rotate-90;
+}
+/* experiance and education */
+.exp_edu_card, 
+.exp_edu_card > p {
+ @apply duration-300;
+}
+.exp_edu_card:hover, 
+.exp_edu_card:hover > p {
+ @apply text-white;
+}
+
+/* My skills section  */
+.skills_card img {
+  @apply duration-300;
+}
+
+.skills_card:hover img {
+  @apply scale-110;
+}
+
+/* blog section  */
+.blog_card img {
+  @apply w-full duration-300;
+}
+
+.blog_card:hover img {
+  @apply scale-110;
+}
+
+.blog_card div {
+  @apply duration-300;
+}
+
+.blog_card_info {
+  @apply duration-300;
+}
+
+.blog_card:hover .blog_card_info {
+  @apply bg-primary text-white;
+}
+
+.blog_card:hover .blog_card_info p {
+  @apply text-white;
+}
+}
+
+
+/* Animation for hero */
+@theme {
+  --animate-scaleAnimation: move 3s linear infinite;
+
+  @keyframes move {
+    50% {
+      transform: scale(1.1);
+    }
+  }
+}
