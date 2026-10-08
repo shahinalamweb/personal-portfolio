@@ -232,6 +232,9 @@ sr.reveal('.contract_form',{origin: "left"});
 sr.reveal('.contract_item',{origin: "right", interval:150});
 
 
+window.addEventListener("scroll", scrollHeader, { passive: true });
+window.addEventListener("scroll", scrollUp, { passive: true });
+window.addEventListener("scroll", activeLink, { passive: true });
 
 
 

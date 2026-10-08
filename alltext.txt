@@ -31,7 +31,7 @@ I dissect complex user experience challenges to devise solutions that prioritize
 UI/UX Design
 I dissect complex user experience challenges to devise solutions that prioritize integrity.
 
-Graphics Design
+UI/UX Design
 I dissect complex user experience challenges to devise solutions that prioritize integrity.
 
 ~~~~~~~~~~~~~~~ My Recent Works ~~~~~~~~~~~~~~~
@@ -93,7 +93,7 @@ React
 JavaScript
 
 ~~~~~~~~~~~~~~~ Recent Blogs ~~~~~~~~~~~~~~~
-Recent Blogs
+
 We transform your ideas and desires into a distinctive web project that inspires both you and your customers.
 
 tutorial

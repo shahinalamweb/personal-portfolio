@@ -63,12 +63,12 @@
     }
 
     body {
-        @apply dark:bg-darkBodyColor dark:text-textColor text-primary bg-blueLittle font-poppins tracking-wider overflow-x-hidden w-[100%] ;
+        @apply dark:bg-darkBodyColor dark:text-textColor text-primary bg-blueLittle font-poppins tracking-wider overflow-x-hidden ;
     }
 
     /* hero design */
     section{
-      @apply py-16 md:pt-28 md:pb-20;
+      @apply py-16 md:pt-28 md:pb-20 overflow-x-clip;
     }
 
     input,
