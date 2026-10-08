@@ -201,7 +201,8 @@ const sr = ScrollReveal({
     distance: "60px",
     duration: 1200,
     delay: 200,
-    reset: false
+    reset: true,
+
 });
 
 sr.reveal('.hero__image');
@@ -214,7 +215,8 @@ sr.reveal('.service_item',{origin: "bottom", interval:150});
 
 sr.reveal('.recent_work_top',{origin: "bottom"});
 sr.reveal('.recent_work_tabs',{origin: "bottom", delay: 300 });
-sr.reveal('.work_card',{origin: "bottom", delay: 150 });
+// sr.reveal('.work_card',{origin: "bottom", delay: 150 });
+
 
 
 sr.reveal('.exp_top',{origin: "top"});
